@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    "mathjax-commonhtml"
+  ],
+  "pluginsConfig": {
+    "mathjax":{
+        "forceSVG": true
+    }
+  }
+}
