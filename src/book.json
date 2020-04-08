@@ -1,10 +1,14 @@
 {
   "plugins": [
-    "mathjax-commonhtml"
+    "mathjax-commonhtml",
+    "uml"
   ],
   "pluginsConfig": {
     "mathjax":{
         "forceSVG": true
+    },
+    "uml": {
+      "charset" : "UTF-8"
     }
   }
 }

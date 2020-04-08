@@ -43,8 +43,26 @@
 - 検索をかけれる
 - 画像を埋め込むことができる(動画については動作未確認)
 
--Gitbook + Jenkins + WEBhock で自動化
--https://akerun.hateblo.jp/entry/2017/12/26/110102
+- Gitbook + Jenkins + WEBhock で自動化
+- https://akerun.hateblo.jp/entry/2017/12/26/110102
+- PlantUML を使う場合は以下
+- https://gitbook-tutorial.firebaseapp.com/pages/diagram.html
+
+## UML sample
+```uml
+@startuml
+
+	Class Stage
+	Class Timeout {
+		+constructor:function(cfg)
+		+timeout:function(ctx)
+		+overdue:function(ctx)
+		+stage: Stage
+	}
+ 	Stage <|-- Timeout
+
+@enduml
+```
 
 
 
