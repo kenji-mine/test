@@ -1,7 +1,8 @@
 {
   "plugins": [
     "mathjax-commonhtml",
-    "uml"
+    "uml",
+    "swagger"
   ],
   "pluginsConfig": {
     "mathjax":{

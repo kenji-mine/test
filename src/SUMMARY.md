@@ -4,3 +4,4 @@
 * サンプル
 	* [GitBook概要](./md/toygitbook.md)
 	* [サンプル1](./md/sample1.md)
+	* [APIドキュメント](./md/apidoc.md)
