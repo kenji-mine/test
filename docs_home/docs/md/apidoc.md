@@ -1,1 +1,0 @@
-<swagger>./src/md/index.yml</swagger>
