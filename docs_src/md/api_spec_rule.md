@@ -158,3 +158,244 @@ HTTPメソッドの下層には、エントリポイントがどのようなリ�
 
 もっとも重要なparametersとresponsesについて補足説明します。  
 
+__parameters__  
+リクエストの際に渡すパラメーターを記述します。  
+
+記述するフィールドは以下です。
+
+|フィールド名|型|説明|必須|
+|:---|:---|:---|:---|
+|name|string|パラメーター名|必須|
+|in|string|パラメータの場所。query, header, path, formData, bodyの5種類のどれかを記述してください|必須|
+|description|string|パラメータの説明||
+|required|boolean|必須パラメーターかどうかをtrueかfalseで記述||
+|schema|schema object|bodyのパラメーターをスキーマオブジェクトとして記述。スキーマオブジェクトについては後述。inがbodyである場合に使用。|inがbodyである場合、必須|
+|type|string|パラメーターのタイプ。<BR>必ずstring, number, integer, boolean, array, fileの中から選ぶ。inがbody以外である場合に使用。|inがbody以外である場合、必須|
+|format|string|パラメーターの型。[こちら](https://swagger.io/specification/#dataTypeFormat)から選ぶ。inがbody以外である場合に使用。|　|  
+
+typeとformatの指定は、[こちら](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types)が参考になります。  
+　  
+パラメーターが記述されると定義書ではこのように表示されます。
+![](../img/api_spec_rule_4.png)
+
+__responses__  
+返ってくるレスポンスを記述します。  
+返したいHTTPステータスコードごとに、定義を行います。
+定義できる設定は下記です。
+
+|フィールド名|型|説明|必須|
+|:---|:---|:---|:---|
+|description|string|レスポンスの説明|必須|
+|schema|schema object|レスポンスのbody。スキーマオブジェクトで記述する。スキーマオブジェクトについては後述。||
+|headers|headers object|レスポンスヘッダーを記述||
+|example|example object|レスポンス例。レスポンスの値を自分で定義したいときに用いる。|　|  
+
+レスポンスを設定すると定義書が下記のように生成されます。  
+![](../img/api_spec_rule_5.png)
+***
+__スキーマオブジェクトについて__  
+
+parameters, responsesを記述する際に、schemaを記述することができます。  
+このschemaにはスキーマオブジェクトを記述します。  
+スキーマオブジェクトは、bodyに用いるデータのタイプを定義することができるオブジェクトです。  
+主に配列かJSONオブジェクトを表現するときに使います。  
+
+__JSONオブジェクト__  
+~~~
+schema:
+  type: object
+~~~  
+と指定すると、JSONオブジェクトを返すことができます。  
+例えば、APIのレスポンスを下記のように返したいとします。  
+
+~~~
+{
+  "id": 1,
+  "name": "doggie"
+}
+~~~  
+この場合はschemaをこのように書きます。  
+~~~
+schema:
+  type: object
+  properties:
+    id:
+      type: "integer"
+      format: "int64"
+      example: 1
+    name:
+      type: "string"
+      example: "doggie"
+~~~  
+`type: object`を指定した場合は、propertiesを設定します。
+propertiesでは、カラムの情報を記述します。
+propertiesには基本的に下記3つが記述されていれば動作します。  
+
+|フィールド名|型|説明|
+|:---|:---|:---|
+|type|string|パラメーターのタイプ。必ずstring, number, integer, boolean, array, fileの中から選ぶ。|
+|format|string|パラメーターの型。|
+|example|typeで選んだ型|レスポンスで返したい文言|  
+typeとformatの指定は、[こちら](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types)が参考になります。  
+　  
+__配列__ 　
+~~~
+schema:
+  type: array
+~~~  
+と指定すると、配列を定義することができます。  
+例えば、APIのレスポンスを下記のように返したいとします。  
+~~~
+[
+  {
+    "id": 1,
+    "name": "doggie"
+  }
+]
+~~~  
+この場合はschemaをこのように書きます。  
+~~~
+schema:
+  type: array
+  items:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 1
+      name:
+        type: "string"
+        example: "doggie"
+~~~  
+`type: array`を指定した場合は、itemsを設定します。  
+itemsには、配列の中のオブジェクトを記述します。  
+配列の中に、JSONを定義したい場合は、`type:object`を指定します。  
+~~~
+schema:
+  type: array
+  items:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 1
+      name:
+        type: "string"
+        example: "doggie"
+~~~  
+また、配列の中に文字列を定義したい場合は、 `type: string`を記述します。
+~~~
+schema:
+  type: array
+  items:
+    type: "string"
+~~~  
+　  
+__definitionsを使う__  
+同じスキーマオブジェクトを複数回使用したい場合、definitionsを使用しテンプレートとして定義することができます。  
+例えばPUTやPOSTのAPIで、処理ステータスしか返さないAPIの場合、同じようなレスポンスの定義になると思います。  
+その場合、都度同じ記載を書くのではなく、definitionsを使ってテンプレート化し、各APIではそのテンプレートを参照定義するようにすれば記載を簡素化することができます。  
+修正を行う場合も一つの場所を修正すればよいので変更漏れも発生でず便利ですね。  
+![](../img/api_spec_rule_6.png)
+definitionsを使う際のポイントは、下記のようになります。  
+　  
+- テンプレート化したいスキーマオブジェクトを、definitionsに定義をする
+- 呼び出したい箇所に、$refを使用して、definitionsのオブジェクトを呼び出す
+
+サンプルをdefinitionsを用いて書き換えると以下のようになります。  
+~~~
+paths:
+  /pet/{petId}:
+    get:
+    省略
+      responses:
+        200:
+          description: "成功時のレスポンス"
+          schema:
+            $ref: "#/definitions/Pet" # definitionsで定義されたスキーマオブジェクトを呼び出す
+definitions:
+  Pet: # テンプレート名
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+        example: "doggie"
+~~~  
+definitionsは複数定義可能で、参照も複数可能です。
+~~~
+paths:
+  /pet/{petId}:
+    get:
+    省略
+      responses:
+        200:
+          description: "成功時のレスポンス"
+          schema:
+            type: "object"
+            properties:
+              pet:
+                $ref: "#/definitions/Pet" 
+              store:
+                $ref: "#/definitions/Store"
+definitions:
+  Pet: 
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+        example: "doggie"
+  Store:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 1
+      store_name:
+        type: "string"
+        example: "ABC PET STORE"
+~~~  
+また、definitionsの中でdefinitionsの他の設定を呼び出すことも可能です。
+~~~
+paths:
+  /pet/{petId}:
+    get:
+    省略
+      responses:
+        200:
+          description: "成功時のレスポンス"
+          schema:
+            $ref: "#/definitions/Pet" 
+definitions:
+  Pet: 
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+        example: "doggie"
+      stores:
+        type: "array"
+        items:
+          $ref: "#/definitions/Store" # Storeを呼び出す
+  Store:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 1
+      store_name:
+        type: "string"
+        example: "ABC PET STORE"
+~~~ 
