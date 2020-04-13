@@ -128,7 +128,7 @@
 	 ├ assets
 	 ├ docs　　　　　公開されるドキュメント
 	 ├ node_modules
-	 └ src　　　　　　変換前のテキストドキュメント（このファイルをソース管理する）
+	 └ docs_src　　　　　　変換前のテキストドキュメント（このファイルをソース管理する）
 	 　 ├ md
 	 　 ├ node_modules
 	 　 ├ book.json
