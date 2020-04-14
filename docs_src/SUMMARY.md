@@ -4,8 +4,8 @@
 * 設計書の書き方
 	* [フォルダ構成](./md/folder_rule.md)
 	* コンポーネント設計書【工事中】
-	* [API仕様書](./md/api_spec_rule.md)【工事中】
-	* API設計書【工事中】
+	* [API仕様書](./md/api_spec_rule.md)
+	* [API設計書](./md/api_process_rule.md)
 	* Batch設計書【工事中】
 	* DB設計書【工事中】
 	* 画面デザインルール【工事中】

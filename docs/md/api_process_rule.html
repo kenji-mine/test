@@ -1,0 +1,636 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>API設計書 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mathjax-commonhtml/mathjax.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-swagger/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="api_spec_rule.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    設計書の書き方
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="folder_rule.html">
+            
+                <a href="folder_rule.html">
+            
+                    
+                    フォルダ構成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    コンポーネント設計書【工事中】
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="api_spec_rule.html">
+            
+                <a href="api_spec_rule.html">
+            
+                    
+                    API仕様書
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="api_process_rule.html">
+            
+                <a href="api_process_rule.html">
+            
+                    
+                    API設計書
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    Batch設計書【工事中】
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    DB設計書【工事中】
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    画面デザインルール【工事中】
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" >
+            
+                <span>
+            
+                    
+                    インフラ設計書【工事中】
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    サンプル（備忘録）
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="toygitbook.html">
+            
+                <a href="toygitbook.html">
+            
+                    
+                    GitBook概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="sample1.html">
+            
+                <a href="sample1.html">
+            
+                    
+                    サンプル1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="apidoc.html">
+            
+                <a href="apidoc.html">
+            
+                    
+                    APIドキュメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    設計書集
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="test/sample2.html">
+            
+                <a href="test/sample2.html">
+            
+                    
+                    設計書サンプル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >API設計書</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ap&#x8A2D;&#x8A08;&#x66F8;">AP&#x8A2D;&#x8A08;&#x66F8;</h1>
+<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<p>&#x4EE5;&#x4E0B;&#x306B;API&#x8A2D;&#x8A08;&#x66F8;&#x306E;&#x8A18;&#x8F09;&#x30EB;&#x30FC;&#x30EB;&#x3092;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;  </p>
+<h2 id="&#x7AE0;&#x7ACB;&#x3066;">&#x7AE0;&#x7ACB;&#x3066;</h2>
+<p>API&#x8A2D;&#x8A08;&#x66F8;&#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x7AE0;&#x7ACB;&#x3066;&#x3067;&#x8A18;&#x8F09;&#x3092;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>Title
+1. Overview
+2. Flow Diagram
+3. Detail
+4. DB Change Definition
+5. Request Parameter
+6. Responce Parameter
+7. Others
+</code></pre><h2 id="title">Title</h2>
+<p>API&#x540D;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>[API&#x30B3;&#x30FC;&#x30C9;&#xFF1A;HTTP&#x30E1;&#x30BD;&#x30C3;&#x30C9; API&#x540D;]</code><br><strong>API&#x30B3;&#x30FC;&#x30C9;</strong><br><code>&#x533A;&#x5206;&#x30B3;&#x30FC;&#x30C9;</code> + XXXX&#xFF08;&#x30BC;&#x30ED;&#x57CB;&#x3081;&#x9023;&#x756A;4&#x6841;&#xFF09;  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x533A;&#x5206;&#x30B3;&#x30FC;&#x30C9;</th>
+<th style="text-align:center">&#x5024;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x5171;&#x901A;</td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x3053;&#x3053;&#x306F;&#x76F8;&#x8AC7;&#x3057;&#x3066;&#x6C7A;&#x3081;&#x308B;<todo>&#x3000;</todo></td>
+<td style="text-align:center">&#x3000;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>HTTP&#x30E1;&#x30BD;&#x30C3;&#x30C9;</strong>  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">HTTP&#x30E1;&#x30BD;&#x30C3;&#x30C9;</th>
+<th style="text-align:left">&#x7528;&#x9014;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x5F97;&#x3092;&#x884C;&#x3046;&#x5834;&#x5408;&#x306B;&#x7528;&#x3044;&#x308B;&#x3002;<br>&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x5BFE;&#x5FDC;&#x3068;&#x306A;&#x3063;&#x3066;&#x3088;&#x3044;&#x5834;&#x5408;&#x306B;&#x9650;&#x308B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">POST</td>
+<td style="text-align:left">&#x51AA;&#x7B49;&#x6027;&#x304C;&#x306A;&#x3044;&#x51E6;&#x7406;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x7528;&#x3044;&#x308B;&#x3002;<br>&#x4F8B;&#xFF1A;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8FFD;&#x52A0;&#x306A;&#x3069;</td>
+</tr>
+<tr>
+<td style="text-align:left">PUT</td>
+<td style="text-align:left">&#x51AA;&#x7B49;&#x6027;&#x304C;&#x3042;&#x308B;&#x51E6;&#x7406;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x7528;&#x3044;&#x308B;&#x3002;<br>&#x4F8B;&#xFF1A;&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&#x306E;&#x5909;&#x66F4;&#x51E6;&#x7406;&#x306A;&#x3069;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x51AA;&#x7B49;&#x6027;(&#x3079;&#x304D;&#x3068;&#x3046;&#x305B;&#x3044;&#x3001;idempotency, idempotence)&#x3068;&#x306F;&#x3001;<strong>&#x540C;&#x3058;&#x64CD;&#x4F5C;&#x3092;&#x4F55;&#x5EA6;&#x7E70;&#x308A;&#x8FD4;&#x3057;&#x3066;&#x3082;&#x3001;&#x540C;&#x3058;&#x7D50;&#x679C;&#x304C;&#x5F97;&#x3089;&#x308C;&#x308B;&#x3068;&#x3044;&#x3046;&#x6027;&#x8CEA;</strong>&#x3067;&#x3059;&#x3002;&#x51AA;&#x7B49;&#x6027;&#x304C;&#x3042;&#x308B;&#x64CD;&#x4F5C;(idempotent operation)&#x306F;&#x3001;1&#x56DE;&#x64CD;&#x4F5C;&#x3057;&#x305F;&#x5834;&#x5408;&#x306E;&#x7D50;&#x679C;&#x3068;&#x3001;2&#x56DE;&#x4EE5;&#x4E0A;&#x64CD;&#x4F5C;&#x3057;&#x305F;&#x5834;&#x5408;&#x306E;&#x7D50;&#x679C;&#x306F;&#x540C;&#x3058;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;  </p>
+<h2 id="overview">Overview</h2>
+<p>&#x51E6;&#x7406;&#x6982;&#x8981;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="flow-diagram">Flow Diagram</h2>
+<p>&#x51E6;&#x7406;&#x30D5;&#x30ED;&#x30FC;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x8A18;&#x8F09;&#x306B;&#x306F;UML&#x3092;&#x7528;&#x3044;&#x307E;&#x3059;&#x3002;<br><img src="../assets/images/uml/da9c21a3b0dbc55a970c18e657dd409a0350b86c.png">  </p>
+<p><strong>&#x8981;&#x7D20;</strong><br>&#x8981;&#x7D20;&#x306B;&#x306F;&#x4EE5;&#x4E0B;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x8981;&#x7D20;&#x540D;</th>
+<th style="text-align:left">&#x5185;&#x5BB9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Client</td>
+<td style="text-align:left">&#x30A2;&#x30D7;&#x30EA;&#x3084;&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x7B49;</td>
+</tr>
+<tr>
+<td style="text-align:left">Own</td>
+<td style="text-align:left">&#x8A18;&#x8F09;&#x4E2D;&#x306E;API</td>
+</tr>
+<tr>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">&#x30B5;&#x30FC;&#x30D0;&#x30B5;&#x30A4;&#x30C9;&#x306E;&#x540C;&#x671F;API</td>
+</tr>
+<tr>
+<td style="text-align:left">Ansync</td>
+<td style="text-align:left">&#x30B5;&#x30FC;&#x30D0;&#x30B5;&#x30A4;&#x30C9;&#x306E;&#x975E;&#x540C;&#x671F;API</td>
+</tr>
+<tr>
+<td style="text-align:left">Queue</td>
+<td style="text-align:left">&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x306E;Queue&#x30B5;&#x30FC;&#x30D0;(Kafka&#x306A;&#x3069;)</td>
+</tr>
+<tr>
+<td style="text-align:left">DB</td>
+<td style="text-align:left">&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3001;&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x30B5;&#x30FC;&#x30D0;&#x306A;&#x3069;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x547C;&#x3073;&#x51FA;&#x3057;&#x51E6;&#x7406;</strong><br>&#x4ED6;&#x306E;API&#x547C;&#x3073;&#x51FA;&#x3057;&#x51E6;&#x7406;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>&#x547C;&#x3073;&#x51FA;&#x3057;&#x5143;&#x8981;&#x7D20;&#x540D; -&gt; &#x547C;&#x3073;&#x51FA;&#x3057;&#x5148;&#x8981;&#x7D20;&#x540D; : &#x51E6;&#x7406;&#x756A;&#x53F7;. Call [API&#x756A;&#x53F7;]</code>&#x3000;&#x3068;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>Own</code>&#x304B;&#x3089;&#x975E;&#x540C;&#x671F;API&#xFF08;M0001&#xFF09;&#x3092;&#x51E6;&#x7406;&#xFF11;&#x3067;&#x547C;&#x3076;&#x51E6;&#x7406;&#x306E;&#x5834;&#x5408;<br><code>Own -&gt; Ansync : 1. call [M0001]</code> &#x3068;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><img src="../assets/images/uml/32ee4c5fdc16a99f58c36d372f8890ce24e7c079.png">  </p>
+<p><strong>&#x8A08;&#x7B97;&#x51E6;&#x7406;</strong><br>&#x8A08;&#x7B97;&#x51E6;&#x7406;&#xFF08;&#x5185;&#x90E8;&#x51E6;&#x7406;&#xFF09;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>Own -&gt; Own : &#x51E6;&#x7406;&#x756A;&#x53F7;. &#x51E6;&#x7406;&#x6982;&#x8981;</code> &#x3068;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x5185;&#x90E8;&#x51E6;&#x7406;&#xFF11;&#x3067;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x3059;&#x308B;&#x51E6;&#x7406;&#x306E;&#x5834;&#x5408;<br><img src="../assets/images/uml/afd25b5ce93a0be3eae06bae33a39319cf97a631.png"><br><strong>&#x6761;&#x4EF6;&#x5206;&#x5C90;</strong><br>&#x6761;&#x4EF6;&#x5206;&#x5C90;&#x51E6;&#x7406;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>alt &#x6761;&#x4EF6;&#x5F0F;
+
+else &#x6761;&#x4EF6;&#x5F0F;
+
+end alt
+</code></pre><p>&#x3068;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>dataKnd = 1</code>&#x306E;&#x6642;&#x3001;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;M0001&#x3092;&#x3001;<code>dataKnd = 2</code>&#x306E;&#x6642;&#x3001;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;M0002&#x3092;&#x3001;&#x305D;&#x308C;&#x4EE5;&#x5916;&#x306E;&#x6642;&#x306F;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;M0003&#x3092;&#x547C;&#x3076;&#x51E6;&#x7406;&#x306E;&#x5834;&#x5408;<img src="../assets/images/uml/4817e538c7346d424a69e5573905618772d95803.png">  </p>
+<p><strong>&#x7E70;&#x308A;&#x8FD4;&#x3057;&#x51E6;&#x7406;</strong><br>&#x7E70;&#x308A;&#x8FD4;&#x3057;&#x51E6;&#x7406;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>loop &#x6761;&#x4EF6;&#x5F0F;
+
+end
+</code></pre><p>&#x3068;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>cnt &gt; 1</code>&#x306E;&#x6642;&#x3001;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;M0001&#x3092;&#x547C;&#x3076;&#x51E6;&#x7406;&#x306E;&#x5834;&#x5408;</p>
+<p><img src="../assets/images/uml/c3555160bd08b9eb8252818d80b84a55e0adc121.png"><br><strong>DB&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x51E6;&#x7406;</strong><br>DB&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x51E6;&#x7406;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>&#x547C;&#x3073;&#x51FA;&#x3057;&#x5143;&#x8981;&#x7D20;&#x540D; -&gt; DB&#x8981;&#x7D20;&#x540D; : &#x51E6;&#x7406;&#x756A;&#x53F7;. &#x51E6;&#x7406; [&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x540D;]</code>&#x3000;&#x3068;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>Own</code>&#x304B;&#x3089;<code>t_member</code>&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x51E6;&#x7406;&#xFF11;&#x3067;Update&#x51E6;&#x7406;&#x3092;&#x884C;&#x3046;&#x5834;&#x5408;<br><code>Own -&gt; DB : 1. Update [t_member]</code> &#x3068;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><img src="../assets/images/uml/01ed2426c5a3c630d137ab3d9fbdfb2afe33c9bd.png">  </p>
+<h2 id="detail">Detail</h2>
+<p>Flow Diagram&#x3000;&#x3067;&#x8A18;&#x8F09;&#x3057;&#x305F;&#x51E6;&#x7406;&#x756A;&#x53F7;&#x306B;&#x5BFE;&#x3059;&#x308B;&#x51E6;&#x7406;&#x8A73;&#x7D30;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;
+<code>&#x51E6;&#x7406;&#x756A;&#x53F7;</code>. <code>&#x51E6;&#x7406;&#x6982;&#x8981;</code>
+&#x51E6;&#x7406;&#x756A;&#x53F7;&#x3001;&#x51E6;&#x7406;&#x6982;&#x8981;&#x306E;&#x8A73;&#x7D30;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x4EE5;&#x4E0B;&#x72B6;&#x6CC1;&#x306B;&#x3088;&#x3063;&#x3066;&#x8A18;&#x8F09;&#x3092;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<ol>
+<li>&#x547C;&#x3073;&#x51FA;&#x3057;&#x51E6;&#x7406;
+ &#x547C;&#x3073;&#x51FA;&#x3057;&#x51E6;&#x7406;&#x306B;&#x306F;<strong>Call Definition</strong>&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br> &#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;  </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&gt;</th>
+<th style="text-align:left">&#x6A5F;&#x80FD;&#x30B3;&#x30FC;&#x30C9;</th>
+<th style="text-align:left">&gt;</th>
+<th style="text-align:left">M0001</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&gt;</th>
+<th style="text-align:left">&gt;</th>
+<th style="text-align:left">&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;</th>
+<th style="text-align:left">&#x5024;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">cstmr_cd</td>
+<td style="text-align:left">request.cstmer_cd</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">list</td>
+<td style="text-align:left">request.list</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">bean</td>
+<td style="text-align:left">request.list.bean</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">data1</td>
+<td style="text-align:left">request.list.bean.data1</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">data2</td>
+<td style="text-align:left">request.list.bean.data2</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>&#x8A08;&#x7B97;&#x51E6;&#x7406;&#xFF08;&#x5185;&#x90E8;&#x51E6;&#x7406;&#xFF09;</li>
+<li>&#x6761;&#x4EF6;&#x5206;&#x5C90;</li>
+<li>DB&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x51E6;&#x7406;</li>
+</ol>
+<h2 id="db-change-definition">DB Change Definition</h2>
+<h2 id="request-parameter">Request Parameter</h2>
+<h2 id="responce-parameter">Responce Parameter</h2>
+<h2 id="others">Others</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="api_spec_rule.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: API仕様書">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"API設計書","level":"1.2.4","depth":2,"next":{"title":"Batch設計書【工事中】","level":"1.2.5","depth":2,"ref":"","articles":[]},"previous":{"title":"API仕様書","level":"1.2.3","depth":2,"path":"md/api_spec_rule.md","ref":"./md/api_spec_rule.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax-commonhtml","uml","swagger","livereload"],"pluginsConfig":{"livereload":{},"search":{},"mathjax-commonhtml":{"defaultScaling":true},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"charset":"UTF-8"},"mathjax":{"forceSVG":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"md/api_process_rule.md","mtime":"2020-04-14T07:59:07.987Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T06:32:40.676Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-swagger/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
