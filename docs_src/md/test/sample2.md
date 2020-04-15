@@ -1,10 +1,10 @@
 # [C001:Common Login API] 
 `PUT` /{costmer}/login
 
-# 1. 機能概要
+# 1. Overview
 ログイン処理を行う
 
-# 2. 処理フロー  
+# 2. Flow Diagram  
 ＵＭＬの確認をします。
 
 ```uml
@@ -37,9 +37,9 @@ end alt
 [https://plantuml.com/ja/sequence-diagram]
 
 
-# 3. 処理詳細
+# 3. Detail
 ## 1. ログイン処理
-・Data Access Definition  
+-Data Access Definition  
 
 | テーブル名 | C | R | U | D | 外部結合 | 結合条件 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
@@ -53,7 +53,7 @@ end alt
 | | 存在しない | 終了 |
 
 ## 3. ログイン履歴登録
-・Data Access Definition  
+-Data Access Definition  
 
 | テーブル名 | C | R | U | D | 外部結合 | 結合条件 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
@@ -61,27 +61,28 @@ end alt
 | user | |*| | | | cstmr_code = customer.cstmer_code {{br}} user_code = request.usr_code {{br}} password = request.pswd |
 | history |*| | | | | cstmr_code = request.cstmer_code  |
 
-## 4.DB変更詳細
+## 4.DB Change Definition
 | テーブル名 | 処理番号 | 
 | :--- | :--- | 
 | history | 3 |
+| **カラム名** | **設定値** |
 | cstmer_code | request.cstmer_code |
 | user_code | request.usr_code |
 | login_date_time | sysdate() |
 
-## 5.リクエストパラメータ
-| パラメータ | 必須 | データ型 | 最小値 | 最大値 | フォーマット補足 |
-| :--- | :---: | :--- | ---: | ---: | :--- |
-| cstmer_code | * | String | 1 | 6 | | 
-| usr_code |  * | String | 1 | 10 | |
-| pswd |  * | String | 1 | 10 | [0-9][a-Z][-@?] |
+## 5.Request Parameter
+| パラメータ | 属性 | 必須 | データ型 | 最小値 | 最大値 | フォーマット補足 |
+| :--- | :---: | :---: | :--- | ---: | ---: | :--- |
+| cstmer_code | Path | * | String | 1 | 6 | | 
+| usr_code | Post | * | String | 1 | 10 | |
+| pswd | Post| * | String | 1 | 10 | [0-9][a-Z][-@?] |
 
-## 6.レスポンスパラメータ
-レスポンスコード:200
+## 6.Responce Parameter
+-レスポンスコード:200
 
 | パラメータ | 必須 | データ型 | 値 | 補足 |
 | :--- | :---: | :--- | :--- | :--- |
-| result | * | boolean | 2.result | true:認証成功{{br}} false:認証失敗 |
-| reason | | number | | result=false の場合のみセット{{br}}1:パスワード無効 2:パスワード間違い |
+| result | * | boolean | 2.result | true:認証成功<BR> false:認証失敗 |
+| reason | | number | | result=false の場合のみセット<BR> 1:パスワード無効<BR> 2:パスワード間違い |
 
-## 7.補足
+## 7.Others

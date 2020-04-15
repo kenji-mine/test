@@ -19,8 +19,8 @@ Title
 ~~~  
 
 ## Title
-API名を記載します。  
-`[APIコード：HTTPメソッド API名]`  
+1.API名を記載します。  
+`[APIコード：API名]`  
 __APIコード__  
 `区分コード` + XXXX（ゼロ埋め連番4桁）  
 
@@ -28,6 +28,12 @@ __APIコード__
 |:---|:---:|
 |共通|C|
 |ここは相談して決める<TODO>　|　|  
+
+2.Pathを記載します。
+`HTTPメソッド path`　で記載します。  
+pathで渡す変数名も記載してください。  
+以下はサンプルです。  
+`PUT /{costmer}/login`
 
 __HTTPメソッド__  
 
@@ -164,26 +170,84 @@ Own -> DB : 1. Update [t_member]
 Flow Diagram　で記載した処理番号に対する処理詳細を記載します。
 `処理番号`. `処理概要`
 処理番号、処理概要の詳細については以下状況によって記載をしてください。
-1. 呼び出し処理
+1. 呼び出し処理  
 	呼び出し処理には**Call Definition**を記載してください。  
 	以下はサンプルです。  
+	***
+	##1. 非同期APIをコールする
+	- Call Definition
+	![](../img/api_process_rule_1.png)
+	***
 
-|>|機能コード|>|M0001|
-|:---|:---|:---|:---|  
+2. 計算処理（内部処理）  
+	内部処理は処理内容を記載してください。  
+	以下はサンプルです。  
+	***
+	##1. 変数の格納
+	request.list.bean.data1をカンマでSplitし、変数local_array_1にセットする 
+	***
 
-|>|>|パラメータ|値|
-|:---|:---|:---|:---|
-|>|>|cstmr_cd|request.cstmer_cd|
-|>|>|list|request.list|
-||>|bean|request.list.bean|
-|||data1|request.list.bean.data1|
-|||data2|request.list.bean.data2|  
+3. 条件分岐  
+	条件分岐は条件とそれぞれの振る舞いを記載してください。  
+	条件分岐では必ず`otherwise`を記載してください。  
+	以下はサンプルです。
+	***
+	##1. ステータスに応じて後続処理を呼び分ける
+	![](../img/api_process_rule_2.png)
+	***
 
-2. 計算処理（内部処理）
-3. 条件分岐
 4. DBアクセス処理
+	呼び出し処理には**Data Access Definition**を記載してください。  
+	以下はサンプルです。  
+	***
+	##1. ユーザ情報を取得する
+	- Data Access Definition
+	![](../img/api_process_rule_3.png)
+	***
 
 ## DB Change Definition
+Detail内に記載した**Data Access Definition**に対するDB更新処理を記載します。  
+記載はテーブル単位です。  
+複数の処理で同じテーブルを更新する場合は、処理番号単位で列を追加してください。  
+以下はサンプルです。
+***
+| テーブル名 | 処理番号 | 
+| :--- | :--- |
+| history | 3 |
+| **カラム名** | **設定値** |
+| cstmer_code | request.cstmer_code |
+| user_code | request.usr_code |
+| login_date_time | sysdate() |
+
+***
+
 ## Request Parameter
+APIを呼ばれる時の引数を記載します。  
+属性には(`Path/Post/Put/Get`)を記載してください。  
+データに制限（取り得る値が決まっている）がある場合は、フォーマット補足に条件を記載してください。 
+以下はサンプルです。
+***
+| パラメータ | 属性 | 必須 | データ型 | 最小値 | 最大値 | フォーマット補足 |
+| :--- | :---: | :---: | :--- | ---: | ---: | :--- |
+| cstmer_code | Path | * | String | 1 | 6 | | 
+| usr_code | Post | * | String | 1 | 10 | |
+| pswd | Post| * | String | 1 | 10 | [0-9][a-Z][-@?] |
+
+***
+
 ## Responce Parameter
+返り値を記載します。  
+返り値はレスポンスコード単位で記載します。  
+以下はサンプルです。
+***
+- レスポンスコード:200
+
+| パラメータ | 必須 | データ型 | 値 | 補足 |
+| :--- | :---: | :--- | :--- | :--- |
+| result | * | boolean | 2.result | true:認証成功<BR> false:認証失敗 |
+| reason | | number | | result=false の場合のみセット<BR> 1:パスワード無効<BR> 2:パスワード間違い |
+***
+
 ## Others
+その他設計で気を付ける点等があればここに記載してください。  
+例えば**Data Access Definition**で副問い合わせや分析関数など複雑なコーディングを求める場合、設計者の意図を開発者に伝えるための情報として、この章にサンプルのSQLを記載するなどが考えられます。  

@@ -380,7 +380,7 @@
 6. Responce Parameter
 7. Others
 </code></pre><h2 id="title">Title</h2>
-<p>API&#x540D;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>[API&#x30B3;&#x30FC;&#x30C9;&#xFF1A;HTTP&#x30E1;&#x30BD;&#x30C3;&#x30C9; API&#x540D;]</code><br><strong>API&#x30B3;&#x30FC;&#x30C9;</strong><br><code>&#x533A;&#x5206;&#x30B3;&#x30FC;&#x30C9;</code> + XXXX&#xFF08;&#x30BC;&#x30ED;&#x57CB;&#x3081;&#x9023;&#x756A;4&#x6841;&#xFF09;  </p>
+<p>1.API&#x540D;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br><code>[API&#x30B3;&#x30FC;&#x30C9;&#xFF1A;API&#x540D;]</code><br><strong>API&#x30B3;&#x30FC;&#x30C9;</strong><br><code>&#x533A;&#x5206;&#x30B3;&#x30FC;&#x30C9;</code> + XXXX&#xFF08;&#x30BC;&#x30ED;&#x57CB;&#x3081;&#x9023;&#x756A;4&#x6841;&#xFF09;  </p>
 <table>
 <thead>
 <tr>
@@ -399,6 +399,8 @@
 </tr>
 </tbody>
 </table>
+<p>2.Path&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;
+<code>HTTP&#x30E1;&#x30BD;&#x30C3;&#x30C9; path</code>&#x3000;&#x3067;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br>path&#x3067;&#x6E21;&#x3059;&#x5909;&#x6570;&#x540D;&#x3082;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br>&#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;<br><code>PUT /{costmer}/login</code></p>
 <p><strong>HTTP&#x30E1;&#x30BD;&#x30C3;&#x30C9;</strong>  </p>
 <table>
 <thead>
@@ -481,75 +483,155 @@ end
 <code>&#x51E6;&#x7406;&#x756A;&#x53F7;</code>. <code>&#x51E6;&#x7406;&#x6982;&#x8981;</code>
 &#x51E6;&#x7406;&#x756A;&#x53F7;&#x3001;&#x51E6;&#x7406;&#x6982;&#x8981;&#x306E;&#x8A73;&#x7D30;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x4EE5;&#x4E0B;&#x72B6;&#x6CC1;&#x306B;&#x3088;&#x3063;&#x3066;&#x8A18;&#x8F09;&#x3092;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
 <ol>
-<li>&#x547C;&#x3073;&#x51FA;&#x3057;&#x51E6;&#x7406;
- &#x547C;&#x3073;&#x51FA;&#x3057;&#x51E6;&#x7406;&#x306B;&#x306F;<strong>Call Definition</strong>&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br> &#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;  </li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&gt;</th>
-<th style="text-align:left">&#x6A5F;&#x80FD;&#x30B3;&#x30FC;&#x30C9;</th>
-<th style="text-align:left">&gt;</th>
-<th style="text-align:left">M0001</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&gt;</th>
-<th style="text-align:left">&gt;</th>
-<th style="text-align:left">&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;</th>
-<th style="text-align:left">&#x5024;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">&gt;</td>
-<td style="text-align:left">&gt;</td>
-<td style="text-align:left">cstmr_cd</td>
-<td style="text-align:left">request.cstmer_cd</td>
-</tr>
-<tr>
-<td style="text-align:left">&gt;</td>
-<td style="text-align:left">&gt;</td>
-<td style="text-align:left">list</td>
-<td style="text-align:left">request.list</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">&gt;</td>
-<td style="text-align:left">bean</td>
-<td style="text-align:left">request.list.bean</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left">data1</td>
-<td style="text-align:left">request.list.bean.data1</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left">data2</td>
-<td style="text-align:left">request.list.bean.data2</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>&#x8A08;&#x7B97;&#x51E6;&#x7406;&#xFF08;&#x5185;&#x90E8;&#x51E6;&#x7406;&#xFF09;</li>
-<li>&#x6761;&#x4EF6;&#x5206;&#x5C90;</li>
-<li>DB&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x51E6;&#x7406;</li>
+<li><p>&#x547C;&#x3073;&#x51FA;&#x3057;&#x51E6;&#x7406;<br> &#x547C;&#x3073;&#x51FA;&#x3057;&#x51E6;&#x7406;&#x306B;&#x306F;<strong>Call Definition</strong>&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br> &#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;  </p>
+<hr>
+<h2 id="1-&#x975E;&#x540C;&#x671F;api&#x3092;&#x30B3;&#x30FC;&#x30EB;&#x3059;&#x308B;">1. &#x975E;&#x540C;&#x671F;API&#x3092;&#x30B3;&#x30FC;&#x30EB;&#x3059;&#x308B;</h2>
+<ul>
+<li>Call Definition
+<img src="../img/api_process_rule_1.png" alt=""></li>
+</ul>
+<hr>
+</li>
+<li><p>&#x8A08;&#x7B97;&#x51E6;&#x7406;&#xFF08;&#x5185;&#x90E8;&#x51E6;&#x7406;&#xFF09;<br> &#x5185;&#x90E8;&#x51E6;&#x7406;&#x306F;&#x51E6;&#x7406;&#x5185;&#x5BB9;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br> &#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;  </p>
+<hr>
+<h2 id="1-&#x5909;&#x6570;&#x306E;&#x683C;&#x7D0D;">1. &#x5909;&#x6570;&#x306E;&#x683C;&#x7D0D;</h2>
+<p> request.list.bean.data1&#x3092;&#x30AB;&#x30F3;&#x30DE;&#x3067;Split&#x3057;&#x3001;&#x5909;&#x6570;local_array_1&#x306B;&#x30BB;&#x30C3;&#x30C8;&#x3059;&#x308B; </p>
+<hr>
+</li>
+<li><p>&#x6761;&#x4EF6;&#x5206;&#x5C90;<br> &#x6761;&#x4EF6;&#x5206;&#x5C90;&#x306F;&#x6761;&#x4EF6;&#x3068;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x632F;&#x308B;&#x821E;&#x3044;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br> &#x6761;&#x4EF6;&#x5206;&#x5C90;&#x3067;&#x306F;&#x5FC5;&#x305A;<code>otherwise</code>&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br> &#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;</p>
+<hr>
+<h2 id="1-&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&#x306B;&#x5FDC;&#x3058;&#x3066;&#x5F8C;&#x7D9A;&#x51E6;&#x7406;&#x3092;&#x547C;&#x3073;&#x5206;&#x3051;&#x308B;">1. &#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&#x306B;&#x5FDC;&#x3058;&#x3066;&#x5F8C;&#x7D9A;&#x51E6;&#x7406;&#x3092;&#x547C;&#x3073;&#x5206;&#x3051;&#x308B;</h2>
+<p> <img src="../img/api_process_rule_2.png" alt=""></p>
+<hr>
+</li>
+<li><p>DB&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x51E6;&#x7406;
+ &#x547C;&#x3073;&#x51FA;&#x3057;&#x51E6;&#x7406;&#x306B;&#x306F;<strong>Data Access Definition</strong>&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br> &#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;  </p>
+<hr>
+<h2 id="1-&#x30E6;&#x30FC;&#x30B6;&#x60C5;&#x5831;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;">1. &#x30E6;&#x30FC;&#x30B6;&#x60C5;&#x5831;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</h2>
+<ul>
+<li>Data Access Definition
+<img src="../img/api_process_rule_3.png" alt=""></li>
+</ul>
+<hr>
+</li>
 </ol>
 <h2 id="db-change-definition">DB Change Definition</h2>
+<p>Detail&#x5185;&#x306B;&#x8A18;&#x8F09;&#x3057;&#x305F;<strong>Data Access Definition</strong>&#x306B;&#x5BFE;&#x3059;&#x308B;DB&#x66F4;&#x65B0;&#x51E6;&#x7406;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x8A18;&#x8F09;&#x306F;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x5358;&#x4F4D;&#x3067;&#x3059;&#x3002;<br>&#x8907;&#x6570;&#x306E;&#x51E6;&#x7406;&#x3067;&#x540C;&#x3058;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x51E6;&#x7406;&#x756A;&#x53F7;&#x5358;&#x4F4D;&#x3067;&#x5217;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br>&#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x540D;</th>
+<th style="text-align:left">&#x51E6;&#x7406;&#x756A;&#x53F7;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">history</td>
+<td style="text-align:left">3</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>&#x30AB;&#x30E9;&#x30E0;&#x540D;</strong></td>
+<td style="text-align:left"><strong>&#x8A2D;&#x5B9A;&#x5024;</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">cstmer_code</td>
+<td style="text-align:left">request.cstmer_code</td>
+</tr>
+<tr>
+<td style="text-align:left">user_code</td>
+<td style="text-align:left">request.usr_code</td>
+</tr>
+<tr>
+<td style="text-align:left">login_date_time</td>
+<td style="text-align:left">sysdate()</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <h2 id="request-parameter">Request Parameter</h2>
+<p>API&#x3092;&#x547C;&#x3070;&#x308C;&#x308B;&#x6642;&#x306E;&#x5F15;&#x6570;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x5C5E;&#x6027;&#x306B;&#x306F;(<code>Path/Post/Put/Get</code>)&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br>&#x30C7;&#x30FC;&#x30BF;&#x306B;&#x5236;&#x9650;&#xFF08;&#x53D6;&#x308A;&#x5F97;&#x308B;&#x5024;&#x304C;&#x6C7A;&#x307E;&#x3063;&#x3066;&#x3044;&#x308B;&#xFF09;&#x304C;&#x3042;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;&#x88DC;&#x8DB3;&#x306B;&#x6761;&#x4EF6;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002; 
+&#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;</th>
+<th style="text-align:center">&#x5C5E;&#x6027;</th>
+<th style="text-align:center">&#x5FC5;&#x9808;</th>
+<th style="text-align:left">&#x30C7;&#x30FC;&#x30BF;&#x578B;</th>
+<th style="text-align:right">&#x6700;&#x5C0F;&#x5024;</th>
+<th style="text-align:right">&#x6700;&#x5927;&#x5024;</th>
+<th style="text-align:left">&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;&#x88DC;&#x8DB3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cstmer_code</td>
+<td style="text-align:center">Path</td>
+<td style="text-align:center">*</td>
+<td style="text-align:left">String</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">6</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">usr_code</td>
+<td style="text-align:center">Post</td>
+<td style="text-align:center">*</td>
+<td style="text-align:left">String</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">10</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">pswd</td>
+<td style="text-align:center">Post</td>
+<td style="text-align:center">*</td>
+<td style="text-align:left">String</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">10</td>
+<td style="text-align:left">[0-9][a-Z][-@?]</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <h2 id="responce-parameter">Responce Parameter</h2>
+<p>&#x8FD4;&#x308A;&#x5024;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x8FD4;&#x308A;&#x5024;&#x306F;&#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x5358;&#x4F4D;&#x3067;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x4EE5;&#x4E0B;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;</p>
+<hr>
+<ul>
+<li>&#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x30B3;&#x30FC;&#x30C9;:200</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;</th>
+<th style="text-align:center">&#x5FC5;&#x9808;</th>
+<th style="text-align:left">&#x30C7;&#x30FC;&#x30BF;&#x578B;</th>
+<th style="text-align:left">&#x5024;</th>
+<th style="text-align:left">&#x88DC;&#x8DB3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">result</td>
+<td style="text-align:center">*</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">2.result</td>
+<td style="text-align:left">true:&#x8A8D;&#x8A3C;&#x6210;&#x529F;<br> false:&#x8A8D;&#x8A3C;&#x5931;&#x6557;</td>
+</tr>
+<tr>
+<td style="text-align:left">reason</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">number</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">result=false &#x306E;&#x5834;&#x5408;&#x306E;&#x307F;&#x30BB;&#x30C3;&#x30C8;<br> 1:&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x7121;&#x52B9;<br> 2:&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x9593;&#x9055;&#x3044;</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <h2 id="others">Others</h2>
+<p>&#x305D;&#x306E;&#x4ED6;&#x8A2D;&#x8A08;&#x3067;&#x6C17;&#x3092;&#x4ED8;&#x3051;&#x308B;&#x70B9;&#x7B49;&#x304C;&#x3042;&#x308C;&#x3070;&#x3053;&#x3053;&#x306B;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br>&#x4F8B;&#x3048;&#x3070;<strong>Data Access Definition</strong>&#x3067;&#x526F;&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;&#x3084;&#x5206;&#x6790;&#x95A2;&#x6570;&#x306A;&#x3069;&#x8907;&#x96D1;&#x306A;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x3092;&#x6C42;&#x3081;&#x308B;&#x5834;&#x5408;&#x3001;&#x8A2D;&#x8A08;&#x8005;&#x306E;&#x610F;&#x56F3;&#x3092;&#x958B;&#x767A;&#x8005;&#x306B;&#x4F1D;&#x3048;&#x308B;&#x305F;&#x3081;&#x306E;&#x60C5;&#x5831;&#x3068;&#x3057;&#x3066;&#x3001;&#x3053;&#x306E;&#x7AE0;&#x306B;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x306E;SQL&#x3092;&#x8A18;&#x8F09;&#x3059;&#x308B;&#x306A;&#x3069;&#x304C;&#x8003;&#x3048;&#x3089;&#x308C;&#x307E;&#x3059;&#x3002;  </p>
 
                                 
                                 </section>
@@ -589,7 +671,7 @@ end
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API設計書","level":"1.2.4","depth":2,"next":{"title":"Batch設計書【工事中】","level":"1.2.5","depth":2,"ref":"","articles":[]},"previous":{"title":"API仕様書","level":"1.2.3","depth":2,"path":"md/api_spec_rule.md","ref":"./md/api_spec_rule.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax-commonhtml","uml","swagger","livereload"],"pluginsConfig":{"livereload":{},"search":{},"mathjax-commonhtml":{"defaultScaling":true},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"charset":"UTF-8"},"mathjax":{"forceSVG":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"md/api_process_rule.md","mtime":"2020-04-14T07:59:07.987Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T06:32:40.676Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API設計書","level":"1.2.4","depth":2,"next":{"title":"Batch設計書【工事中】","level":"1.2.5","depth":2,"ref":"","articles":[]},"previous":{"title":"API仕様書","level":"1.2.3","depth":2,"path":"md/api_spec_rule.md","ref":"./md/api_spec_rule.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax-commonhtml","uml","swagger","livereload"],"pluginsConfig":{"livereload":{},"search":{},"mathjax-commonhtml":{"defaultScaling":true},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"charset":"UTF-8"},"mathjax":{"forceSVG":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"md/api_process_rule.md","mtime":"2020-04-15T01:45:29.558Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T01:46:22.982Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
