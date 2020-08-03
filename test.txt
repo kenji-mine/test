@@ -1,34 +1,20 @@
-nslookup 208.91.112.53 >> text.log
-nslookup 192.168.1.255 >> text.log
-nslookup 224.0.0.251 >> text.log
-nslookup 224.0.0.252 >> text.log
-nslookup 208.91.112.52 >> text.log
-nslookup 35.185.44.232 >> text.log
-nslookup 23.193.155.237 >> text.log
-nslookup 172.217.26.42 >> text.log
-nslookup 216.58.220.99 >> text.log
-nslookup 172.217.174.110 >> text.log
-nslookup 40.112.49.67 >> text.log
-nslookup 239.255.255.250 >> text.log
-nslookup 13.107.21.200 >> text.log
-nslookup 20.36.219.28 >> text.log
-nslookup 13.93.150.192 >> text.log
-nslookup 204.79.197.200 >> text.log
-nslookup 52.185.211.133 >> text.log
-nslookup 13.107.6.163 >> text.log
-nslookup 13.107.255.182 >> text.log
-nslookup 13.107.136.254 >> text.log
-nslookup 204.79.197.222 >> text.log
-nslookup 23.73.60.138 >> text.log
-nslookup 104.42.79.240 >> text.log
-nslookup 52.183.220.149 >> text.log
-nslookup 13.107.42.14 >> text.log
-nslookup 52.244.105.143 >> text.log
-nslookup 13.107.246.254 >> text.log
-nslookup 44.233.111.149 >> text.log
-nslookup 104.16.25.35 >> text.log
-nslookup 44.233.140.104 >> text.log
-nslookup 2.22.74.76 >> text.log
-nslookup 72.21.81.200 >> text.log
-nslookup 13.107.6.254 >> text.log
-nslookup 204.79.197.254 >> text.log
+名前:    232.44.185.35.bc.googleusercontent.com
+Address:  35.185.44.232
+名前:    a23-193-155-237.deploy.static.akamaitechnologies.com
+Address:  23.193.155.237
+名前:    nrt12s17-in-f10.1e100.net
+Address:  172.217.26.42
+名前:    syd10s01-in-f99.1e100.net
+Address:  216.58.220.99
+名前:    nrt12s28-in-f14.1e100.net
+Address:  172.217.174.110
+名前:    a-0001.a-msedge.net
+Address:  204.79.197.200
+名前:    a23-73-60-138.deploy.static.akamaitechnologies.com
+Address:  23.73.60.138
+名前:    ec2-44-233-111-149.us-west-2.compute.amazonaws.com
+Address:  44.233.111.149
+名前:    ec2-44-233-140-104.us-west-2.compute.amazonaws.com
+Address:  44.233.140.104
+名前:    a2-22-74-76.deploy.static.akamaitechnologies.com
+Address:  2.22.74.76
