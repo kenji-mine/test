@@ -119,7 +119,9 @@ else 条件式
 end alt
 ~~~  
 と記載します。  
-`dataKnd = 1`の時、非同期処理M0001を、`dataKnd = 2`の時、非同期処理M0002を、それ以外の時は非同期処理M0003を呼ぶ処理の場合```uml
+`dataKnd = 1`の時、非同期処理M0001を、`dataKnd = 2`の時、非同期処理M0002を、それ以外の時は非同期処理M0003を呼ぶ処理の場合
+	
+```uml
 @startuml
 participant Own
 participant Ansync
