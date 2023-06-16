@@ -17,39 +17,58 @@
 !define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/master/dist
 !includeurl AzurePuml/AzureCommon.puml
 !includeurl AzurePuml/AzureC4Integration.puml
-!includeurl AzurePuml/Compute/AzureFunction.puml
-!includeurl AzurePuml/Analytics/AzureStreamAnalyticsJob.puml
-!includeurl AzurePuml/Analytics/AzureEventHub.puml
+!includeurl AzurePuml/Databases/AzureRedisCache.puml
 !includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Databases/AzureSqlDatabase.puml
+!includeurl AzurePuml/Web/AzureWebApp.puml
+!includeurl AzurePuml/Web/AzureCDN.puml
+!includeurl AzurePuml/Web/AzureSearch.puml
 !includeurl AzurePuml/Storage/AzureBlobStorage.puml
-!includeurl AzurePuml/InternetOfThings/AzureIoTHub.puml
+!includeurl AzurePuml/Storage/AzureQueueStorage.puml
 
-LAYOUT_LEFT_RIGHT
 LAYOUT_WITH_LEGEND()
 
-System(devices, "Devices")
+Person(user, "User")
 
-AzureIoTHub(iotHub, "IoT Hub", "Standard S1", "Ingress point for all telemetry, using built-in IoT Hub Routes for routing")
+Container(spa, "Single-Page App", "Angular, JS")
+AzureWebApp(webApp, "Web & API App", "ASP.NET Core MVC 2.1, C#", "Delivers the SPA and provides RESTful web APIs which are consumed from the SPA")
+AzureCDN(cdn, "CDN", "Akamai S2", "caches publicly available content for lower latency and faster delivery of content")
 
-AzureEventHub(eventHubTelemetry, "Device Telemetry", "Standard, 5 TUs, 4 Partitions", "In addition to the built-in 'Receive device-to-cloud messages' from IoT Hub")
-AzureFunction(telemetryFunction, "Telemetry Processing", "v1, App Service plan P3v2, C#", "transform it into a different format, e.g. joining external information")
-AzureCosmosDb(warmStorageCosmos, "Warm Storage", "2,000 RUs", "for consumption, e.g. display on a dashboard")
+AzureBlobStorage(staticBlobStorage, "Static Content", "General Purpose v2, Hot, LRS")
 
-AzureStreamAnalyticsJob(streamAnalytics, "Stream Analytics", "6 SUs", "apply complex queries over time periods, tolerates late (up to 21 days) and out-of-order (up to one hour) events")
-AzureFunction(alertingFunction, "Alerting", "v2, Consumption plan, JS")
+AzureQueueStorage(queue, "Queue", "General Purpose v2, LRS")
+AzureSearch(search, "Search Index", "Standard S1", "provides search suggestions, fuzzy search, and language-specific search, consolidates a single search index from multiple data stores")
+AzureRedisCache(redisCache, "Cache", "Standard C2")
 
-AzureBlobStorage(coldBlobStorage, "Cold Storage", "General Purpose v2, Cool, RA-GRS", "all incoming data records are archived indefinitely at low cost, and are easily accessible for batch processing")
+AzureCosmosDb(cosmosDb, "Document DB", "SQL API, 400 RUs")
+AzureSqlDatabase(sqlDb, "SQL DB", "Standard S3")
 
-Rel(devices, iotHub, "Send telemetry to")
+AzureWebApp(webJob, "Web Job", "WebJobs SDK v3, C#", "runs long-running tasks in the background")
 
-Rel(iotHub, eventHubTelemetry, "Routes all telemetry to")
-Rel_Back(iotHub, streamAnalytics, "Analyzes each event from")
-Rel(iotHub, coldBlobStorage, "Routes all telemetry to")
+Rel(user, spa, "Uses", "HTTPS")
+Rel(user, webApp, "Uses", "HTTPS")
+Rel(user, cdn, "Uses", "HTTPS")
 
-Rel_Back(eventHubTelemetry, telemetryFunction, "Processes each event from")
-Rel(streamAnalytics, alertingFunction, "Triggers for output batches to")
+Rel_Neighbor(spa, webApp, "Uses", "JSON, HTTPS")
+Rel_Back_Neighbor(spa, webApp, "Delivers")
 
-Rel(telemetryFunction, warmStorageCosmos, "Writes all transformed events to")
+Rel_Neighbor(cdn, staticBlobStorage, "Reads from")
+
+Rel(webApp, queue, "Puts background jobs into")
+Rel(webApp, sqlDb, "Reads from and writes to", "ADO.NET")
+Rel(webApp, cosmosDb, "Reads from and writes to", "SQL API")
+Rel(webApp, redisCache, "Reads from and writes to")
+Rel(webApp, search, "Reads from")
+
+Rel_U(webJob, queue, "Gets next job from")
+Rel_U(webJob, sqlDb, "Reads from and writes to", "ADO.NET")
+Rel_U(webJob, cosmosDb, "Reads from and writes to", "SQL API")
+Rel_U(webJob, redisCache, "Reads from and writes to")
+
+Rel_Back_Neighbor(cosmosDb, search, "Builds index from")
+Rel_Neighbor(search, sqlDb, "Builds index from")
+
+Lay_D(search, webJob)
 
 @enduml
 ```
