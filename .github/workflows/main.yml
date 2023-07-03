@@ -2,7 +2,7 @@ name: Upload Node.js 10 and 12 tool cache
 on: push
 jobs:
   upload_tool_cache:
-    runs-on: linux
+    runs-on: ubuntu-22.04
     steps:
       - name: Clear any existing tool cache
         run: |
